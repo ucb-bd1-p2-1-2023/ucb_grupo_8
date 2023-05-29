@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>In Driver</title>
+</head>
+<body>
+    <div class="box">
+        <h1 class="title is-1">🚘 Driver Form Page 7</h1>
+        <h2 class="subtitle is-3">Fill your data in this form</h2>
+    </div>
+    <div class="box my-6">
+        <div class="field">
+          <h2 class="subtitle is-3">Notifications</h2>
+            <label class="label" for="notification_id">Notification id:</label>
+            <div class="control">
+                <input class="input" type="text" id="notification_id" placeholder="Exammple: 56">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label" for="ususario_id">User id:</label>
+            <div class="control">
+                <input class="input" type="text" id="ususario_id" placeholder="Example: 14632543">
+            </div>
+        </div>
+            <div class="field">
+                <label class="label" for="mensaje "> Comments:</label>
+                <div class="control">
+                    <input class="input" type="text" id="mensaje" placeholder="Exammple: Comentario Personal">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="leida">Estatus:</label>
+                <div class="control">
+                    <input class="input" type="text" id="leida" placeholder="Example: Estado de la solicitud">
+                </div>
+            </div>
+    </div>
+    <div class="block">
+        <button class="button is-primary is-meidum is-fullwidth mt-6" onclick="submitForm()">Submit</button>
+    </div>
+</div>
+    <script>
+        function submitForm() {
+
+            function getValues() {
+                return {
+                    notification_id: document.getElementById('notification_id').value,
+                    ususario_id: document.getElementById('ususario_id').value,
+                    mensaje: document.getElementById('mensaje').value,
+                    leida: document.getElementById('leida').value,
+                }
+            }
+            
+
+            const url = 'http://localhost:3000/Notifications';
+            const method = 'POST';
+            const headers = {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            };
+            const body = JSON.stringify(getValues());
+            const medatata = { method, headers, body };
+            fetch(url, medatata)
+            .then(response => response.json())
+            .then(response => console.log(JSON.stringify(response)))
+        }
+    </script>
+</body>
+</html>

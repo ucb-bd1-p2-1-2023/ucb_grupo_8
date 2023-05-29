@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>In Driver</title>
+</head>
+<body>
+    <div class="box">
+        <h1 class="title is-1">🚘 Driver Form Page 4</h1>
+        <h2 class="subtitle is-3">Fill your data in this form</h2>
+    </div>
+    <div class="box my-6">
+        <div class="field">
+          <h2 class="subtitle is-3">Trips</h2>
+            <label class="label" for="trip_id">Trip id:</label>
+            <div class="control">
+                <input class="input" type="text" id="trip_id" placeholder="Exammple: 465">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label" for="title">Trip Type:</label>
+            <div class="control">
+                <input class="input" type="text" id="title" placeholder="Example: Comun">
+            </div>
+        </div>
+            <div class="field">
+                <label class="label" for="estado_viaje "> Car Brand:</label>
+                <div class="control">
+                    <input class="input" type="text" id="estado_viaje" placeholder="Exammple: Disponible">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="conductor_id">Driver id:</label>
+                <div class="control">
+                    <input class="input" type="text" id="conductor_id" placeholder="Example: 1345234">
+                </div>
+            </div>
+        <div class="field">
+            <label class="label" for="pasajero_id ">User id:</label>
+            <div class="control">
+                <input class="input" type="text" id="pasajero_id " placeholder="Example: 14567345">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label" for="origen ">Origin:</label>
+            <div class="control">
+                <input class="input" type="text" id="origen " placeholder="Example: Ayacucho">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label" for="destino ">Destination place:</label>
+            <div class="control">
+                <input class="input" type="text" id="destino " placeholder="Example: Fidel Anze">
+            </div>
+        </div>     
+        <div class="block">
+            <button class="button is-primary is-meidum is-fullwidth mt-6" onclick="submitForm()">Submit</button>
+        </div>
+    </div>
+    
+    <script>
+        function submitForm() {
+
+            function getValues() {
+                return {
+                    trip_id: document.getElementById('trip_id').value,
+                    title: document.getElementById('title').value,
+                    estado_viaje: document.getElementById('estado_viaje').value,
+                    conductor_id: document.getElementById('conductor_id').value,
+                    pasajero_id: document.getElementById('pasajero_id').value,
+                    origen: document.getElementById('anio').value,
+                    destino: document.getElementById('destino').value,
+                }
+            }
+            
+
+            const url = 'http://localhost:3000/Trips';
+            const method = 'POST';
+            const headers = {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            };
+            const body = JSON.stringify(getValues());
+            const medatata = { method, headers, body };
+            fetch(url, medatata)
+            .then(response => response.json())
+            .then(response => console.log(JSON.stringify(response)))
+        }
+    </script>
+</body>
+</html>

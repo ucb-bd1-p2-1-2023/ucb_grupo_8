@@ -9,21 +9,14 @@
 </head>
 <body>
     <div class="box">
-        <h1 class="title is-1">🚘 Driver Form</h1>
+        <h1 class="title is-1">🚘 Driver Form2</h1>
         <h2 class="subtitle is-3">Fill your data in this form</h2>
     </div>
     <div class="box my-6">
         <div class="field">
-          <h2 class="subtitle is-3">Users</h2>
-            <label class="label" for="name_user">Name User:</label>
+            <label class="label" for="firstName">First name:</label>
             <div class="control">
                 <input class="input" type="text" id="firstName" placeholder="Exammple: Carlos">
-            </div>
-        </div>
-        <div class="field">
-            <label class="label" for="lastName">Last name:</label>
-            <div class="control">
-                <input class="input" type="text" id="lastName" placeholder="Example: Terraza">
             </div>
         </div>
             <div class="field">
@@ -32,36 +25,18 @@
                     <input class="input" type="text" id="phone" placeholder="Exammple: 67686883">
                 </div>
             </div>
-            <div class="field">
-                <label class="label" for="email">Email:</label>
-                <div class="control">
-                    <input class="input" type="text" id="email" placeholder="Example: carlos@gmail.com">
-                </div>
-            </div>
         <div class="field">
-            <label class="label" for="following_user_id ">User id:</label>
+            <label class="label" for="lastName">Last name:</label>
             <div class="control">
-                <input class="input" type="text" id="following_user_id " placeholder="Example: 14567345">
+                <input class="input" type="text" id="lastName" placeholder="Example: Terraza">
             </div>
         </div>
         <div class="field">
-            <label class="label" for="trip_id ">Trip id:</label>
+            <label class="label" for="email">Email:</label>
             <div class="control">
-                <input class="input" type="text" id="trip_id " placeholder="Example: 345">
+                <input class="input" type="text" id="email" placeholder="Example: carlos@gmail.com">
             </div>
         </div>
-        <div class="field">
-            <label class="label" for="monto ">Monto a pagar:</label>
-            <div class="control">
-                <input class="input" type="text" id="monto " placeholder="Example: 20">
-            </div>
-        </div>
-        <div class="field">
-            <label class="label" for="metodo_pago ">Metodo de pago:</label>
-            <div class="control">
-                <input class="input" type="text" id="metodo_pago " placeholder="Example: 20">
-            </div>
-        </div>        
         <div class="block">
             <button class="button is-primary is-meidum is-fullwidth mt-6" onclick="submitForm()">Submit</button>
         </div>
@@ -72,18 +47,14 @@
             function getValues() {
                 return {
                     firstName: document.getElementById('firstName').value,
-                    lastName: document.getElementById('lastName').value,
                     phone: document.getElementById('phone').value,
+                    lastName: document.getElementById('lastName').value,
                     email: document.getElementById('email').value,
-                    following_user_id: document.getElementById('following_user_id').value,
-                    trip_id: document.getElementById('trip_id').value,
-                    monto: document.getElementById('monto').value,
-                    metodo_pago: document.getElementById('metodo_pago').value,
                 }
             }
             
 
-            const url = 'http://localhost:3000/driver';
+            const url = 'http://localhost:3000/user';
             const method = 'POST';
             const headers = {
                 'Accept': 'application/json',

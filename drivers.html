@@ -9,27 +9,27 @@
 </head>
 <body>
     <div class="box">
-        <h1 class="title is-1">🚘 Driver Form</h1>
+        <h1 class="title is-1">🚘 Driver Form Page 2</h1>
         <h2 class="subtitle is-3">Fill your data in this form</h2>
     </div>
     <div class="box my-6">
         <div class="field">
-          <h2 class="subtitle is-3">Users</h2>
-            <label class="label" for="name_user">Name User:</label>
+          <h2 class="subtitle is-3">🚘 Drivers</h2>
+            <label class="label" for="firstName">Name Drive:</label>
             <div class="control">
-                <input class="input" type="text" id="firstName" placeholder="Exammple: Carlos">
+                <input class="input" type="text" id="firstName" placeholder="Exammple: Juan">
             </div>
         </div>
         <div class="field">
-            <label class="label" for="lastName">Last name:</label>
+            <label class="label" for="driver_id">Driver id:</label>
             <div class="control">
-                <input class="input" type="text" id="lastName" placeholder="Example: Terraza">
+                <input class="input" type="text" id="driver_id" placeholder="Example: 1435649">
             </div>
         </div>
             <div class="field">
-                <label class="label" for="phone"> phone:</label>
+                <label class="label" for="placa_vehiculo"> Placa de Vehiculo:</label>
                 <div class="control">
-                    <input class="input" type="text" id="phone" placeholder="Exammple: 67686883">
+                    <input class="input" type="text" id="placa_vehiculo" placeholder="Exammple: BOL1342">
                 </div>
             </div>
             <div class="field">
@@ -39,27 +39,21 @@
                 </div>
             </div>
         <div class="field">
-            <label class="label" for="following_user_id ">User id:</label>
+            <label class="label" for="estado_disponible">Estado:</label>
             <div class="control">
-                <input class="input" type="text" id="following_user_id " placeholder="Example: 14567345">
+                <input class="input" type="text" id="estado_disponible" placeholder="Example: Disponile">
             </div>
         </div>
         <div class="field">
-            <label class="label" for="trip_id ">Trip id:</label>
+            <label class="label" for="contrasenia">Contrasenia del conductor:</label>
             <div class="control">
-                <input class="input" type="text" id="trip_id " placeholder="Example: 345">
+                <input class="input" type="text" id="contrasenia" placeholder="Example: abxZ23">
             </div>
         </div>
         <div class="field">
-            <label class="label" for="monto ">Monto a pagar:</label>
+            <label class="label" for="telefono">Telefono:</label>
             <div class="control">
-                <input class="input" type="text" id="monto " placeholder="Example: 20">
-            </div>
-        </div>
-        <div class="field">
-            <label class="label" for="metodo_pago ">Metodo de pago:</label>
-            <div class="control">
-                <input class="input" type="text" id="metodo_pago " placeholder="Example: 20">
+                <input class="input" type="text" id="telefono" placeholder="Example: 76583497">
             </div>
         </div>        
         <div class="block">
@@ -72,18 +66,16 @@
             function getValues() {
                 return {
                     firstName: document.getElementById('firstName').value,
-                    lastName: document.getElementById('lastName').value,
-                    phone: document.getElementById('phone').value,
+                    driver_id: document.getElementById('driver_id').value,
                     email: document.getElementById('email').value,
-                    following_user_id: document.getElementById('following_user_id').value,
-                    trip_id: document.getElementById('trip_id').value,
-                    monto: document.getElementById('monto').value,
-                    metodo_pago: document.getElementById('metodo_pago').value,
+                    placa_vehiculo: document.getElementById('placa_vehiculo').value,
+                    estado_disponible: document.getElementById('estado_disponible').value,
+                    contrasenia: document.getElementById('contrasenia').value,
+                    telefono: document.getElementById('telefono').value,
                 }
             }
-            
 
-            const url = 'http://localhost:3000/driver';
+            const url = 'http://localhost:3000/drivers';
             const method = 'POST';
             const headers = {
                 'Accept': 'application/json',
